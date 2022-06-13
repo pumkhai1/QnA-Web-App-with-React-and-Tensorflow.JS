@@ -48,6 +48,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+
         {model ==null ? 
           <div>
             <div>Model Loading</div>      
@@ -58,7 +59,7 @@ const App = () => {
             width={100}/>
           </div> 
           :  
-          <React.Fragment>
+          <Fragment>
             Passage
             <textarea ref={passageRef} rows="30" cols="100"></textarea>
             Ask a Question
@@ -66,8 +67,9 @@ const App = () => {
             <br /> 
             Answers
             {answer ? answer.map((ans, idx) =><div><b>Answer {idx+1} - </b> {ans.text} ({Math.floor(ans.score*100)/100})</div>) : ""}
-            </React.Fragment>
+            </Fragment>
         } 
+        
       </header>
     </div>
   );
